@@ -1,0 +1,573 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/* CSS Reset dan pengaturan global */
+* {
+    margin: 0; /* Nol margin */
+    padding: 0; /* Nol padding */
+    box-sizing: border-box; /* Box-sizing border-box */
+    text-decoration: none; /* Tanpa dekorasi teks */
+    border: none; /* Tanpa border */
+    outline: none; /* Tanpa outline */
+    scroll-behavior: smooth; /* Perilaku scroll smooth */
+    font-family: 'Nunito', sans-serif; /* Font family default */
+}
+
+/* Variabel untuk warna yang dapat digunakan di seluruh CSS */
+:root {
+    --bgcolor: #191f36; /* Warna latar belakang */
+    --snd-bg-color: #262b40; /* Warna latar belakang kedua */
+    --text-color: #fff; /* Warna teks */
+    --main-color: #59b2f4; /* Warna utama */
+}
+
+/* Pengaturan ukuran font root */
+html {
+    font-size: 10px; /* 10px dari ukuran font root */
+    overflow-x: hidden; /* Sembunyikan scroll horizontal */
+}
+
+/* Pengaturan latar belakang dan warna teks body */
+body {
+    background: var(--bgcolor); /* Warna latar belakang body */
+    color: var(--text-color); /* Warna teks body */
+}
+
+/* Pengaturan padding untuk section */
+section {
+    min-height: 100vh; /* Tinggi minimum 100 viewport height */
+    padding: 5rem 9% 5rem; /* Padding atas, kanan, bawah */
+}
+
+/* Pengaturan header */
+.header {
+    position: fixed; /* Posisi tetap */
+    top: 0; /* Atas 0 */
+    left: 0; /* Kiri 0 */
+    width: 100%; /* Lebar 100% */
+    padding: 2rem 9%; /* Padding atas dan bawah */
+    background: #242b39; /* Warna latar belakang */
+    display: flex; /* Tampilan flex */
+    justify-content: space-between; /* Justify-content space-between */
+    align-items: center; /* Align-items center */
+    z-index: 100; /* Z-index 100 */
+}
+
+/* Pengaturan logo */
+.logo {
+    font-size: 2.5rem; /* Ukuran font logo */
+    color: var(--text-color); /* Warna teks logo */
+    font-weight: 700; /* Ketebalan font logo */
+    cursor: default; /* Kursor default */
+}
+
+/* Pengaturan link navbar */
+.navbar a {
+    font-size: 1.5rem; /* Ukuran font link navbar */
+    color: var(--text-color); /* Warna teks link navbar */
+    margin-left: 4rem; /* Margin kiri link navbar */
+    font-weight: 700; /* Ketebalan font link navbar */
+}
+
+/* Pengaturan hover dan active pada link navbar */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Warna utama pada hover/active */
+}
+
+/* Pengaturan icon menu */
+#menu-icon {
+    font-size: 3.6rem; /* Ukuran font icon menu */
+    color: var(--text-color); /* Warna teks icon menu */
+    display: none; /* Sembunyikan icon menu */
+}
+
+/* Pengaturan konten halaman home */
+.home {
+    display: flex; /* Tampilan flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    gap: 1cm; /* Jarak antar elemen */
+}
+
+/* Pengaturan judul h3 pada home */
+.home-content h3 {
+    font-size: 4rem; /* Ukuran font h3 */
+    font-weight: 700; /* Ketebalan font h3 */
+}
+
+/* Pengaturan judul h1 pada home */
+.home-content h1 {
+    font-size: 6rem; /* Ukuran font h1 */
+    font-weight: 700; /* Ketebalan font h1 */
+    line-height: 1.3; /* Line-height 1.3 */
+}
+
+/* Pengaturan warna span */
+span {
+    color: var(--main-color); /* Warna span */
+}
+
+/* Pengaturan gambar pada halaman home */
+.home-img img {
+    width: 25vw; /* Lebar gambar 25% dari viewport width */
+    animation: floatImage 4s ease-in-out infinite; /* Animasi mengambang */
+    padding-left: 2rem; /* Padding kiri */
+}
+
+/* Keyframes untuk animasi mengambang */
+@keyframes floatImage {
+    0% {
+        transform: translateY(0); /* Transformasi translasi Y 0 */
+    }
+    50% {
+        transform: translateY(-2.4rem); /* Transformasi translasi Y -2.4rem */
+    }
+    100% {
+        transform: translateY(0); /* Transformasi translasi Y 0 */
+    }
+}
+
+/* Pengaturan konten pada halaman home */
+.home-content p {
+    font-size: 1.6rem; /* Ukuran font paragraf */
+    text-align: justify; /* Rata kanan kiri */
+}
+
+/* Pengaturan ikon media sosial */
+.social-media a {
+    display: inline-flex; /* Tampilan inline-flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    width: 4rem; /* Lebar 4rem */
+    height: 4rem; /* Tinggi 4rem */
+    background: transparent; /* Latar belakang transparan */
+    border: .2rem solid var(--main-color); /* Border dengan warna utama */
+    border-radius: 50%; /* Border-radius 50% */
+    font-size: 2rem; /* Ukuran font */
+    color: var(--main-color); /* Warna teks */
+    margin: 3rem 1.5rem 3rem 0; /* Margin */
+    transition: .5s ease; /* Transisi */
+} 
+
+/* Hover pada ikon media sosial */
+.social-media a:hover {
+    color: white; /* Warna putih */
+    transform: scale(1.3) translateY(-5px); /* Transisi scaling dan translasi */
+    background: var(--main-color); /* Warna latar belakang */
+    box-shadow: 0 0 25px var(--main-color); /* Bayangan */
+}
+
+/* Pengaturan tombol */
+.btn {
+    display: inline-block; /* Tampilan inline-block */
+    padding: 1rem 2.8rem; /* Padding atas bawah dan kanan kiri */
+    background: var(--main-color); /* Warna latar belakang */
+    border-radius: 4rem; /* Border-radius 4rem */
+    box-shadow: 0 0 1rem var(--main-color); /* Bayangan */
+    font-size: 1.6rem; /* Ukuran font */
+    color: var(--bgcolor); /* Warna teks */
+    letter-spacing: .1rem; /* Spasi antar huruf */
+    font-weight: 600; /* Ketebalan font */
+    transition: .5s ease; /* Transisi */
+}
+
+/* Hover pada tombol */
+.btn:hover {
+    box-shadow: none; /* Hapus bayangan */
+}
+
+/* Pengaturan halaman about */
+.about {
+    display: flex; /* Tampilan flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    gap: 2rem; /* Jarak antar elemen */
+    background: var(--snd-bg-color); /* Warna latar belakang */
+}
+
+/* Pengaturan gambar pada halaman about */
+.about-img img {
+    width: 35vw; /* Lebar gambar 35% dari viewport width */
+}
+
+/* Pengaturan judul pada halaman about */
+.heading {
+    text-align: center; /* Rata tengah */
+    font-size: 6rem; /* Ukuran font */
+}
+
+/* Pengaturan konten pada halaman about */
+.about-content h2 {
+    text-align: left; /* Rata kiri */
+    line-height: 6rem; /* Line-height 6rem */
+}
+
+.about-content h3 {
+    font-size: 4rem; /* Ukuran font h3 */
+}
+
+.about-content p {
+    font-size: 1.6rem; /* Ukuran font paragraf */
+    margin: 2rem 0 3rem; /* Margin */
+    text-align: justify; /* Rata kanan kiri */
+}
+
+/* Pengaturan judul pada halaman services */
+.services h2 {
+    margin-bottom: 5rem; /* Margin bawah */
+}
+
+/* Pengaturan kontainer services */
+.services-container {
+    display: flex; /* Tampilan flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    flex-wrap: wrap; /* Flex-wrap wrap */
+    gap: 2rem; /* Jarak antar elemen */
+}
+
+/* Pengaturan kotak services */
+.services-container .services-box {
+    flex: 1 1 30rem; /* Flex-grow, flex-shrink, flex-basis */
+    background: var(--snd-bg-color); /* Warna latar belakang */
+    padding: 3rem 2rem 4rem; /* Padding atas, kanan, bawah */
+    border-radius: 2rem; /* Border-radius 2rem */
+    text-align: center; /* Rata tengah */
+    border: .2rem solid var(--bgcolor); /* Border dengan warna latar belakang */
+    transition: .5s ease; /* Transisi */
+}
+
+/* Hover pada kotak services */
+.services-container .services-box:hover {
+    border-color: var(--main-color); /* Warna border pada hover */
+    transform: scale(1.02); /* Transisi scaling */
+}
+
+/* Icon pada kotak services */
+.services-box i {
+    font-size: 7rem; /* Ukuran font icon */
+    color: var(--main-color); /* Warna icon */
+}
+
+/* Judul pada kotak services */
+.services-box h3 {
+    font-size: 2.6rem; /* Ukuran font h3 */
+}
+
+/* Konten pada kotak services */
+.services-box p {
+    font-size: 1.6rem; /* Ukuran font paragraf */
+    margin: 1rem 0 3rem; /* Margin */
+    text-align: justify; /* Rata kanan kiri */
+}
+
+/* Pengaturan portofolio */
+.portfolio {
+    background: var(--snd-bg-color); /* Warna latar belakang */
+}
+
+/* Judul pada halaman portofolio */
+.portfolio h2 {
+    margin-bottom: 4rem; /* Margin bawah */
+}
+
+/* Kontainer pada halaman portofolio */
+.portfolio-container {
+    display: grid; /* Tampilan grid */
+    grid-template-columns: repeat(3, 1fr); /* Template grid columns */
+    align-items: center; /* Align-items center */
+    gap: 2.5rem; /* Jarak antar elemen */
+}
+
+/* Kotak pada halaman portofolio */
+.portfolio-container .portfolio-box {
+    position: relative; /* Posisi relatif */
+    border-radius: 2rem; /* Border-radius 2rem */
+    box-shadow: 0 0 1rem var(--bgcolor); /* Bayangan */
+    overflow: hidden; /* Overflow hidden */
+    display: flex; /* Tampilan flex */
+}
+
+/* Gambar pada kotak portofolio */
+.portfolio-box img {
+    width: 100%; /* Lebar 100% */
+    transform: .5s ease; /* Transisi */
+    opacity: 0.7; /* Opacity 0.7 */
+}
+
+/* Hover pada gambar kotak portofolio */
+.portfolio-box:hover img {
+    transform: scale(1.1); /* Transisi scaling */
+}
+
+/* Layer pada kotak portofolio */
+.portfolio-box .portfolio-layer {
+    position: absolute; /* Posisi absolut */
+    bottom: 0; /* Bawah 0 */
+    left: 0; /* Kiri 0 */
+    width: 100%; /* Lebar 100% */
+    height: 100%; /* Tinggi 100% */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color)); /* Gradien linear */
+    display: flex; /* Tampilan flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    flex-direction: column; /* Flex-direction column */
+    text-align: center; /* Rata tengah */
+    padding: 0 4rem; /* Padding atas bawah dan kanan kiri */
+    transform: translateY(100%); /* Transformasi translasi Y 100% */
+    transition: .5s ease; /* Transisi */
+}
+
+/* Hover pada layer kotak portofolio */
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0); /* Transformasi translasi Y 0 */
+}
+
+/* Judul h4 pada layer kotak portofolio */
+.portfolio-layer h4 {
+    font-size: 3rem; /* Ukuran font h4 */
+}
+
+/* Konten pada layer kotak portofolio */
+.portfolio-layer p {
+    font-size: 1.6rem; /* Ukuran font paragraf */
+    margin: .3rem 0 1rem; /* Margin */
+}
+
+/* Link pada layer kotak portofolio */
+.portfolio-layer a {
+    display: inline-flex; /* Tampilan inline-flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    width: 5rem; /* Lebar 5rem */
+    height: 5rem; /* Tinggi 5rem */
+    background: var(--text-color); /* Warna latar belakang */
+    border-radius: 50%; /* Border-radius 50% */
+}
+
+/* Icon pada link layer kotak portofolio */
+.portfolio-layer a i {
+    font-size: 2rem; /* Ukuran font icon */
+    color: var(--snd-bg-color); /* Warna icon */
+}
+
+/* Pengaturan halaman kontak */
+.contact h2 {
+    margin-bottom: 3rem; /* Margin bawah */
+}
+
+/* Form pada halaman kontak */
+.contact form {
+    max-width: 70rem; /* Lebar maksimum 70rem */
+    margin: 1rem auto; /* Margin */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 3rem; /* Margin bawah */
+}
+
+/* Kotak input pada form kontak */
+.contact form .input-box {
+    display: flex; /* Tampilan flex */
+    justify-content: space-between; /* Justify-content space-between */
+    flex-wrap: wrap; /* Flex-wrap wrap */
+}
+
+/* Input pada kotak input */
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%; /* Lebar 100% */
+    padding: 1.5rem; /* Padding atas bawah dan kanan kiri */
+    font-size: 1.6rem; /* Ukuran font */
+    color: var(--text-color); /* Warna teks */
+    background: var(--snd-bg-color); /* Warna latar belakang */
+    border-radius: .8rem; /* Border-radius 0.8rem */
+    margin: .7rem 0; /* Margin */
+}
+
+/* Input pada kotak input */
+.contact form .input-box input {
+    width: 49%; /* Lebar 49% */
+}
+
+/* Pengaturan textarea pada form kontak */
+.contact form textarea {
+    resize: none; /* Resize none */
+}
+
+/* Pengaturan tombol pada form kontak */
+.contact form .btn {
+    margin-top: 2rem; /* Margin atas */
+    cursor: pointer; /* Kursor pointer */
+}
+
+/* Pengaturan footer */
+.footer {
+    display: flex; /* Tampilan flex */
+    justify-content: space-between; /* Justify-content space-between */
+    align-items: center; /* Align-items center */
+    flex-wrap: wrap; /* Flex-wrap wrap */
+    padding: 2rem 9%; /* Padding atas bawah dan kanan kiri */
+    background: var(--snd-bg-color); /* Warna latar belakang */
+}
+
+/* Pengaturan teks footer */
+.footer-text {
+    font-size: 1.7rem; /* Ukuran font */
+}
+
+/* Icon top pada footer */
+.footer-iconTop {
+    display: inline-flex; /* Tampilan inline-flex */
+    justify-content: center; /* Justify-content center */
+    align-items: center; /* Align-items center */
+    padding: .8rem 1rem; /* Padding atas bawah dan kanan kiri */
+    background: var(--main-color); /* Warna latar belakang */
+    border-radius: .8rem; /* Border-radius 0.8rem */
+    transition: .5s ease; /* Transisi */
+}
+
+/* Hover pada icon top footer */
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--text-color); /* Bayangan */
+}
+
+/* Icon pada icon top footer */
+.footer-iconTop a i {
+    font-size: 2.4rem; /* Ukuran font icon */
+    color: var(--snd-bg-color); /* Warna icon */
+}
+
+/* BREAKPOINT - Respon CSS untuk perangkat berukuran kecil */
+
+/* Breakpoint pada lebar 1200px */
+@media (max-width:1200px) {
+    html {
+        font-size: 55%; /* Ukuran font root 55% */
+    }
+}
+
+/* Breakpoint pada lebar 991px */
+@media (max-width:991px) {
+    .header {
+        padding: 2rem 3%; /* Padding atas bawah dan kanan kiri */
+    }
+
+    section {
+        padding: 10rem 3%; /* Padding atas bawah dan kanan kiri */
+    }
+
+    .services {
+        padding: 7rem; /* Padding atas bawah */
+    }
+
+    .portfolio {
+        padding-bottom: 7rem; /* Padding bawah */
+    }
+
+    .contact {
+        min-height: auto; /* Tinggi minimum otomatis */
+    }
+
+    .footer {
+        padding: 2rem 3%; /* Padding atas bawah dan kanan kiri */
+    }
+}
+
+/* Breakpoint pada lebar 768px */
+@media (max-width:768px) {
+    #menu-icon {
+        display: block; /* Tampilkan icon menu */
+    }
+
+    .navbar {
+        position: absolute; /* Posisi absolut */
+        top: 100%; /* Atas 100% */
+        left: 0; /* Kiri 0 */
+        width: 100%; /* Lebar 100% */
+        padding: 1rem 3%; /* Padding atas bawah dan kanan kiri */
+        background: var(--bgcolor); /* Warna latar belakang */
+        border-top: .1rem solid rgba(0, 0, 0, .2); /* Border atas */
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2); /* Bayangan */
+        display: none; /* Sembunyikan */
+    }
+
+    .navbar.active {
+        display: block; /* Tampilkan navbar */
+    }
+
+    .navbar a {
+        display: block; /* Tampilan block */
+        font-size: 2rem; /* Ukuran font */
+        margin: 3rem 0; /* Margin atas bawah */
+    }
+
+    .home {
+        flex-direction: column; /* Flex-direction column */
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem; /* Ukuran font h3 */
+    }
+
+    .home-content h1 {
+        font-size: 5rem; /* Ukuran font h1 */
+    }
+
+    .home-content {
+        order: 2; /* Urutan 2 */
+    }
+
+    .home-img img {
+        width: 70vw; /* Lebar gambar 70% dari viewport width */
+        margin-top: 4rem; /* Margin atas */
+    }
+
+    .about {
+        flex-direction: column; /* Flex-direction column */
+    }
+
+    .about-img img {
+        width: 90vw; /* Lebar gambar 90% dari viewport width */
+        margin-top: 4rem; /* Margin atas */
+    }
+
+    .services h2 {
+        margin-bottom: 3rem; /* Margin bawah */
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem; /* Margin bawah */
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr); /* Template grid columns */
+    }
+}
+
+/* Breakpoint pada lebar 617px */
+@media (max-width:617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Template grid columns 1fr */
+    }
+
+    .home-img i,g {
+        width: 80vw; /* Lebar gambar 80% dari viewport width */
+        margin-top: 8rem; /* Margin atas */
+    }
+
+    .about-img img {
+        width: 100vw; /* Lebar gambar 100% dari viewport width */
+        margin-top: 4rem; /* Margin atas */
+    }
+}
+
+/* Breakpoint pada lebar 450px */
+@media (max-width:450px) {
+    html {
+        font-size: 50%; /* Ukuran font root 50% */
+    }
+
+    .contact form .input-box input {
+        width: 100%; /* Lebar 100% */
+    }
+}
